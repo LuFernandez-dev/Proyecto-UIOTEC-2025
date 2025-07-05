@@ -25,7 +25,6 @@
         <td>{{ contacto.nombre }}</td>
         <td>{{ contacto.apellido }}</td>
         <td>{{ contacto.email }}</td>
-        <td>{{ contacto.fecha_registro }}</td>
         <td>
             <a href="{% url 'contacto_update' contacto.id %}" class="btn-actualizar">Editar</a>
             <a href="{% url 'contacto_delete' contacto.id %}" class="btn-eliminar">Eliminar</a>

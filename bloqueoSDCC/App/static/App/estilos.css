@@ -1,0 +1,292 @@
+/*Estilo de la pagina*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0D1B2A; /* Azul oscuro */
+    color: white;
+}
+
+header {
+    background-color: black;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background-color: #1B263B;
+    padding: 50px;
+    text-align: center;
+}
+
+.hero h2 {
+    color: #E0E1DD;
+}
+
+.hero p {
+    color: #A9BCD0;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+/*Estilo de la pagina*/
+
+/*Botones crear, editar, eliminar y cancelar*/
+/* Botón de Crear*/
+.btn-crear {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 5px;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+}
+.btn-crear:hover, .btn-crear:focus {
+    border-color: #218838;
+    background-color: #218838;
+    text-decoration: none;
+}
+
+/*Botón de Editar*/
+.btn-actualizar {
+    background-color: #ffc107;
+    color: #212529;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 5px;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+}
+.btn-actualizar:hover, .btn-actualizar:focus {
+    border-color: #b38600;
+    background-color: #b38600;
+    text-decoration: none;
+}
+
+/*Botón de Eliminar*/
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 5px;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+}
+.btn-eliminar:hover, .btn-eliminar:focus {
+    border-color: #a71d2a;
+    background-color: #a71d2a;
+    text-decoration: none;
+}
+
+/*Botón de Cancelar*/
+.btn-cancelar {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 5px;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+}
+.btn-cancelar:hover, .btn-cancelar:focus {
+    border-color: #565e64;
+    background-color: #565e64;
+    text-decoration: none;
+}
+/*Botones crear, editar, eliminar y cancelar*/
+
+/*Para que los datos hagan salto de linea*/
+.tabla-instalaciones td:nth-child(7) {
+    max-width: 300px;      /* Ajusta el ancho máximo según prefieras */
+    word-break: break-word;
+    white-space: pre-line; /* Mantiene saltos de línea si los hay */
+    overflow-wrap: break-word;
+}
+/*Para que los datos hagan salto de linea*/
+
+/* Estilos para la tabla*/
+.tabla-contactos,
+.tabla-instalaciones,
+.tabla-tecnico,
+.tabla-ventas,
+.tabla-versionproducto {
+    width: 75%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    background-color: #1B263B;
+    border: 1px solid #415A77;
+}
+
+.tabla-tecnico th, .tabla-tecnico td,
+.tabla-versionproducto th, .tabla-versionproducto td,
+.tabla-contactos th, .tabla-contactos td,
+.tabla-instalaciones th, .tabla-instalaciones td,
+.tabla-ventas th, .tabla-ventas td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #415A77;
+    color: #E0E1DD;
+    background-color: rgba(29, 38, 59, 0.95);
+}
+
+.tabla-tecnico th,
+.tabla-versionproducto th,
+.tabla-contactos th,
+.tabla-instalaciones th,
+.tabla-ventas th {
+    background-color: #415A77;
+    font-weight: bold;
+}
+
+.tabla-tecnico td:last-child,
+.tabla-ventas td:last-child,
+.tabla-contactos td:last-child,
+.tabla-versionproducto td:last-child,
+.tabla-instalaciones td:last-child {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.tabla-versionproducto .btn-actualizar,
+.tabla-versionproducto .btn-eliminar,
+.tabla-tecnico .btn-actualizar,
+.tabla-tecnico .btn-eliminar,
+.tabla-ventas .btn-actualizar,
+.tabla-ventas .btn-eliminar,
+.tabla-contactos .btn-actualizar,
+.tabla-contactos .btn-eliminar,
+.tabla-instalaciones .btn-actualizar,
+.tabla-instalaciones .btn-eliminar {
+    margin-right: 5px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+/* Estilos para la tabla*/
+/*estilos de la galeria de imagenes*/
+.galeria-funciona {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    justify-items: center;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.galeria-funciona figure {
+    width: 100%;
+    max-width: 360px;
+    background-color: #1B263B;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+}
+
+.galeria-funciona img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.galeria-funciona img:hover {
+    transform: scale(1.02);
+}
+
+.galeria-funciona figcaption {
+    color: #A9BCD0;
+    font-size: 15px;
+    padding: 12px 10px;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .galeria-funciona {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-funciona figure {
+        max-width: 90%;
+    }
+
+    .galeria-funciona img {
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.formulario-alineado {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #1B263B;
+    padding: 30px 30px 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.formulario-alineado label {
+    display: inline-block;
+    width: 140px;
+    color: #E0E1DD;
+    font-weight: bold;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+
+.formulario-alineado input,
+.formulario-alineado select,
+.formulario-alineado textarea {
+    width: 65%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #415A77;
+    border-radius: 4px;
+    background: #0D1B2A;
+    color: #E0E1DD;
+}
+
+.formulario-alineado .errorlist {
+    color: #dc3545;
+    margin: 0 0 10px 140px;
+    font-size: 14px;
+    list-style: none;
+    padding: 0;
+}
+

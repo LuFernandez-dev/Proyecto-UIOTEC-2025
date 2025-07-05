@@ -1,0 +1,13 @@
+{% extends 'App/base.html' %}
+
+{% block content %}
+<h2>Confirmar eliminación</h2>
+
+<p>¿Estás seguro que deseas eliminar la versión {{ object.nombre }} (Lanzamiento: {{ object.fecha_lanzamiento }})?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn-eliminar">Eliminar</button>
+    <a href="{% url 'versionproducto_list' %}" class="btn-cancelar">Cancelar</a>
+</form>
+{% endblock %}

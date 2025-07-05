@@ -1,0 +1,37 @@
+{% extends 'App/base.html' %}
+
+{% block content %}
+<h2>Listado de Versiones del Producto</h2>
+
+<div class="acciones-superiores">
+    <a href="{% url 'versionproducto_create' %}" class="btn-crear">Crear</a>
+</div>
+
+<table class="tabla-versionproducto">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha de Lanzamiento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for version in versiones %}
+        <tr>
+            <td>{{ version.nombre }}</td>
+            <td>{{ version.descripcion }}</td>
+            <td>{{ version.fecha_lanzamiento }}</td>
+            <td>
+                <a href="{% url 'versionproducto_update' version.id %}" class="btn-actualizar">Editar</a>
+                <a href="{% url 'versionproducto_delete' version.id %}" class="btn-eliminar">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4" style="padding-left: 10px; text-align: left;">No hay versiones registradas.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

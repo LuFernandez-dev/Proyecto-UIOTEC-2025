@@ -1,0 +1,13 @@
+{% extends 'App/base.html' %}
+
+{% block content %}
+<h2>Confirmar eliminación</h2>
+
+<p>¿Seguro que deseas eliminar al técnico {{ object.nombre }} {{ object.apellido }} (Legajo: {{ object.legajo }})?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn-eliminar">Eliminar</button>
+    <a href="{% url 'tecnico_list' %}" class="btn-cancelar">Cancelar</a>
+</form>
+{% endblock %}

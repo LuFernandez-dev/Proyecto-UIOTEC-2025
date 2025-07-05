@@ -1,0 +1,12 @@
+{% extends 'App/base.html' %}
+
+{% block content %}
+<h2>{% if form.instance.pk %}Editar{% else %}Nuevo{% endif %} Contacto</h2>
+
+<form method="post" class="formulario-alineado">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn-crear">Guardar</button>
+    <a href="{% url 'contacto_list' %}" class="btn-cancelar">Volver al listado</a>
+</form>
+{% endblock %}

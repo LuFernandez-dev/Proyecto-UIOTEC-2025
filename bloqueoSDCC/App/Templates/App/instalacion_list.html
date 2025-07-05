@@ -1,0 +1,45 @@
+{% extends 'App/base.html' %}
+
+{% block content %}
+<h2>Listado de Instalaciones</h2>
+
+<div class="acciones-superiores">
+    <a href="{% url 'instalacion_create' %}" class="btn-crear">Crear</a>
+</div>
+
+<table class="tabla-instalaciones">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>DNI</th>
+            <th>Vehículo</th>
+            <th>Dirección</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Notas</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for instalacion in instalaciones %}
+        <tr>
+            <td>{{ instalacion.cliente.nombre }} {{ instalacion.cliente.apellido }}</td>
+            <td>{{ instalacion.cliente.dni }}</td>
+            <td>{{ instalacion.vehiculo }}</td>
+            <td>{{ instalacion.direccion }}</td>
+            <td>{{ instalacion.fecha_instalacion }}</td>
+            <td>{{ instalacion.estado }}</td>
+            <td>{{ instalacion.notas }}</td>
+            <td>
+                <a href="{% url 'instalacion_update' instalacion.id %}" class="btn-actualizar">Editar</a>
+                <a href="{% url 'instalacion_delete' instalacion.id %}" class="btn-eliminar">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="8" style="padding-left: 10px; text-align: left;">No hay instalaciones registradas.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

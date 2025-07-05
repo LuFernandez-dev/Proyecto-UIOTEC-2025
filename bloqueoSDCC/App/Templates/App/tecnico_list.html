@@ -1,0 +1,39 @@
+{% extends 'App/base.html' %}
+
+{% block content %}
+<h2>Listado de Técnicos</h2>
+
+<div class="acciones-superiores">
+    <a href="{% url 'tecnico_create' %}" class="btn-crear">Crear</a>
+</div>
+
+<table class="tabla-tecnico">
+    <thead>
+        <tr>
+            <th>Legajo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tecnico in tecnicos %}
+        <tr>
+            <td>{{ tecnico.legajo }}</td>
+            <td>{{ tecnico.nombre }}</td>
+            <td>{{ tecnico.apellido }}</td>
+            <td>{{ tecnico.telefono }}</td>
+            <td>
+                <a href="{% url 'tecnico_update' tecnico.id %}" class="btn-actualizar">Editar</a>
+                <a href="{% url 'tecnico_delete' tecnico.id %}" class="btn-eliminar">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5" style="padding-left: 10px; text-align: left;">No hay técnicos registrados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

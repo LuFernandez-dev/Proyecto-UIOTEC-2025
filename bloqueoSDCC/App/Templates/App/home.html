@@ -1,0 +1,52 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <h2>Bienvenido a la Solución de Bloqueo Vehicular</h2>
+    <p>Seguridad, confianza y tecnología al servicio de tu automóvil.</p>
+</section>
+<section class="como-funciona"> <!-- SE AGREGO COMO FUNCIONA EN EL HOME -->
+<h2>¿Cómo funciona?</h2>
+<div class="funciona-texto">
+    <p>
+    El sistema S.D.C.C. refuerza el cierre de las puertas desde el interior del auto,
+    actuando sobre el parante B mediante un mecanismo robusto y discreto.
+    </p>
+    <p>
+    Se activa vía Bluetooth desde tu celular o control remoto, sin contacto físico.
+    Una placa Arduino comanda el servomotor que bloquea la puerta en segundos.
+    </p>
+    <p>
+    Funciona con batería recargable, es adaptable a distintos modelos
+    y no altera el diseño del vehículo.
+    </p>
+    <p class="frase-impacto">
+    Tecnología hecha para tu tranquilidad.
+    </p>
+</div>
+<div class="galeria-funciona"> <!-- SE AGREGARON IMÁGENES Y SUBTÍTULOS EN CADA UNA -->
+<figure>
+    <img src="{% static 'App/Imagen1.jpg' %}" alt="Conexión Arduino">
+    <figcaption>Conexión de Arduino con módulo Bluetooth</figcaption>
+</figure>
+<figure>
+    <img src="{% static 'App/Imagen2.jpg' %}" alt="Sistema en auto">
+    <figcaption>Esquema de instalación dentro del vehículo</figcaption>
+</figure>
+<figure>
+    <img src="{% static 'App/Imagen3.jpg' %}" alt="Bluetooth real">
+    <figcaption>Montaje real de Bluetooth y Arduino</figcaption>
+</figure>
+<figure>
+    <img src="{% static 'App/Imagen4.jpg' %}" alt="Actuador en parante">
+    <figcaption>Actuador mecánico en el parante B</figcaption>
+</figure>
+</div>
+
+
+
+</section>
+
+{% endblock %}

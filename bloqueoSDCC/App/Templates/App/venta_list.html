@@ -1,0 +1,47 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section class="seccion">
+    <h2>Lista de Ventas</h2>
+
+<div class="acciones-superiores">
+    <a href="{% url 'venta_create' %}" class="btn-crear">Crear</a>
+</div>
+    
+    <table class="tabla-ventas">
+        <thead>
+            <tr>
+                <th>DNI Cliente</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Forma de Pago</th>
+                <th>Importe</th>
+                <th>Fecha de Compra</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for venta in ventas %}
+            <tr>
+                <td>{{ venta.cliente.dni }}</td>
+                <td>{{ venta.cliente.nombre }}</td>
+                <td>{{ venta.cliente.apellido }}</td>
+                <td>{{ venta.get_forma_pago_display }}</td>
+                <td>${{ venta.importe }}</td>
+                <td>{{ venta.fecha_compra }}</td>
+                <td>
+                    <a href="{% url 'venta_update' venta.id %}" class="btn-actualizar">Editar</a>
+                    <a href="{% url 'venta_delete' venta.id %}" class="btn-eliminar">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" style="padding-left: 10px; text-align: left;">No hay ventas registradas.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}k

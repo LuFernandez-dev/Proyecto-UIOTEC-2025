@@ -31,8 +31,10 @@
             <td>{{ instalacion.estado }}</td>
             <td>{{ instalacion.notas }}</td>
             <td>
+                <div class="acciones-tabla">
                 <a href="{% url 'instalacion_update' instalacion.id %}" class="btn-actualizar">Editar</a>
-                <a href="{% url 'instalacion_delete' instalacion.id %}" class="btn-eliminar">Eliminar</a>
+                <a href="{% url 'instalacion_delete' instalacion.id %}" class="btn-eliminar">Eliminar</a> 
+                </div>
             </td>
         </tr>
         {% empty %}

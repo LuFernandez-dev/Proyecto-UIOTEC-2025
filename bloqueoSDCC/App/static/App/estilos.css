@@ -173,13 +173,18 @@ footer {
     font-weight: bold;
 }
 
-.tabla-tecnico td:last-child,
-.tabla-ventas td:last-child,
+.tabla-contactos th:last-child,
+.tabla-instalaciones th:last-child,
+.tabla-tecnico th:last-child,
+.tabla-versionproducto th:last-child,
+.tabla-ventas th:last-child,
 .tabla-contactos td:last-child,
+.tabla-instalaciones td:last-child,
+.tabla-tecnico td:last-child,
 .tabla-versionproducto td:last-child,
-.tabla-instalaciones td:last-child {
-    white-space: nowrap;
-    text-align: right;
+.tabla-ventas td:last-child {
+text-align: left;
+padding-left: 16px;
 }
 
 .tabla-versionproducto .btn-actualizar,

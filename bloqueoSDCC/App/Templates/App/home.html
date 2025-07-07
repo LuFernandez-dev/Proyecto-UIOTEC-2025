@@ -28,21 +28,27 @@
 </div>
 <div class="galeria-funciona">
 <figure>
-    <img src="{% static 'App/Imagen1.jpg' %}" alt="Conexión Arduino">
+    <img src="{% static 'App/Imagen1.jpg' %}" class="img-click" data-img="{% static 'App/Imagen1.jpg' %}">
     <figcaption>Conexión de Arduino con módulo Bluetooth</figcaption>
 </figure>
 <figure>
-    <img src="{% static 'App/Imagen2.jpg' %}" alt="Sistema en auto">
+    <img src="{% static 'App/Imagen2.jpg' %}" class="img-click" data-img="{% static 'App/Imagen2.jpg' %}">
     <figcaption>Esquema de instalación dentro del vehículo</figcaption>
 </figure>
 <figure>
-    <img src="{% static 'App/Imagen3.jpg' %}" alt="Bluetooth real">
+    <img src="{% static 'App/Imagen3.jpg' %}" class="img-click" data-img="{% static 'App/Imagen3.jpg' %}">
     <figcaption>Montaje real de Bluetooth y Arduino</figcaption>
 </figure>
 <figure>
-    <img src="{% static 'App/Imagen4.jpg' %}" alt="Actuador en parante">
+    <img src="{% static 'App/Imagen4.jpg' %}" class="img-click" data-img="{% static 'App/Imagen4.jpg' %}">
     <figcaption>Actuador mecánico en el parante B</figcaption>
 </figure>
+</div>
+
+<div id="modal-img" class="modal-img">
+    <span class="cerrar">&times;</span>
+    <img class="modal-contenido" id="img-grande">
+    <p class="modal-texto" id="texto-grande"></p>
 </div>
 
 </section>

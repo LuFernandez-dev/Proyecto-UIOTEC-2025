@@ -32,8 +32,10 @@
                 <td>${{ venta.importe }}</td>
                 <td>{{ venta.fecha_compra }}</td>
                 <td>
-                    <a href="{% url 'venta_update' venta.id %}" class="btn-actualizar">Editar</a>
-                    <a href="{% url 'venta_delete' venta.id %}" class="btn-eliminar">Eliminar</a>
+                    <div class="acciones-tabla">
+                <a href="{% url 'venta_update' venta.id %}" class="btn-actualizar">Editar</a>
+                <a href="{% url 'venta_delete' venta.id %}" class="btn-eliminar">Eliminar</a> 
+                    </div>
                 </td>
             </tr>
             {% empty %}

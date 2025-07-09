@@ -39,6 +39,45 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+.funciona-texto {
+    background-color: #1B263B;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    text-align: center;
+    color: #E0E1DD;
+    line-height: 1.6;
+}
+
+.frase-impacto {
+    color: #0055A4;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.como-funciona h2 {
+    color: #0055A4;
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.como-funciona h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background-color: currentColor;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
 /*  =======================
     Base Global Styles
     ======================= */

@@ -15,6 +15,7 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
+            <th>Telefono</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -25,6 +26,7 @@
         <td>{{ contacto.nombre }}</td>
         <td>{{ contacto.apellido }}</td>
         <td>{{ contacto.email }}</td>
+        <td>{{ contacto.telefono }}</td>
         <td>
             <a href="{% url 'contacto_update' contacto.id %}" class="btn-actualizar">Editar</a>
             <a href="{% url 'contacto_delete' contacto.id %}" class="btn-eliminar">Eliminar</a>
@@ -32,7 +34,7 @@
         </tr>
         {% empty %}
         <tr>
-            <td colspan="5" style="padding-left: 10px; text-align: left;">No hay contactos cargados.</td>
+            <td colspan="6" style="padding-left: 10px; text-align: left;">No hay contactos cargados.</td>
         </tr>
         {% endfor %}
     </tbody>

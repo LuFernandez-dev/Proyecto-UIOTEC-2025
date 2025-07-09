@@ -6,7 +6,15 @@ from .forms import *
 #Crea tus vistas aqui
 #Home
 def mostrar_home(request):
-    return render(request, 'App/home.html')
+    if request.method == 'POST':
+        form = ContactoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'App/confirmacion_contacto.html')
+    else:
+        form = ContactoForm()
+    
+    return render(request, 'App/home.html', {'form': form})
 
 #Instalaciones
 #Lista de instalaciones
@@ -112,14 +120,6 @@ def eliminar_venta(request, pk):
 def contacto_list(request):
     contactos = Contacto.objects.all()
     return render(request, 'App/contacto_list.html', {'contactos': contactos})
-
-#Registra contacto
-def crear_contacto(request):
-    form = ContactoForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('contacto_list')
-    return render(request, 'App/contacto_form.html', {'form': form})
 
 #Edita contacto
 def editar_contacto(request, pk):

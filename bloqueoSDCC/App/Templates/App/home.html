@@ -69,4 +69,13 @@
     </div>
 </section>
 
+<section class="como-funciona">
+    <h2>Dejanos tus datos</h2>
+    <form method="post" class="formulario-alineado">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-crear">Enviar</button>
+    </form>
+</section>
+
 {% endblock %}

@@ -8,18 +8,22 @@
     <link rel = "icon" href = "{% static 'App/favicon.ico' %}">
 </head>
 <body>
-    <header>
-        <h1>S.D.C.C</h1>
-        <br>
-        <nav>
-            <a href="{% url 'home' %}">Inicio</a>
-            <a href="{% url 'contacto_list' %}">Contactos</a>
-            <a href="{% url 'versionproducto_list' %}">Versiones</a>
-            <a href="{% url 'instalacion_list' %}">Instalaciones</a>
-            <a href="{% url 'tecnico_list' %}">Técnicos</a>
-            <a href="{% url 'venta_list' %}">Ventas</a>
-        </nav>
-    </header>
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'App/Logo.png' %}" class="logo-navbar">
+            </a>
+            <span class="bienvenida-texto">Bienvenido a SDCC</span>
+        </div>
+    <nav>
+        <a href="{% url 'contacto_list' %}">Contactos</a>
+        <a href="{% url 'versionproducto_list' %}">Versiones</a>
+        <a href="{% url 'instalacion_list' %}">Instalaciones</a>
+        <a href="{% url 'tecnico_list' %}">Técnicos</a>
+        <a href="{% url 'venta_list' %}">Ventas</a>
+    </nav>
+</header>
+
 
     <main>
         {% block content %}{% endblock %}

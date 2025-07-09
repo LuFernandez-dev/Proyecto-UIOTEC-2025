@@ -19,14 +19,58 @@ header h1 {
     color: white;
 }
 
+/* Navbar fija (sticky) */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Contenedor del logo y texto */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Estilo del logo con marco */
+.logo-navbar {
+    height: 50px;
+    width: auto;
+    border: 2px solid #3B9AE1;
+    border-radius: 8px;
+    padding: 4px;
+    background-color: #0D1B2A;
+    box-shadow: 0 0 6px rgba(59, 154, 225, 0.4);
+}
+
+/* Texto "Bienvenido a SDCC" */
+.bienvenida-texto {
+    color: #E0E1DD;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 nav a {
     color: white;
     margin: 0 10px;
     text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 6px;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: white;
+    color: #0D1B2A; /* azul oscuro que ya usás */
+    text-decoration: none;
 }
 
 main {
@@ -77,6 +121,22 @@ footer {
     background-color: currentColor;
     margin: 8px auto 0;
     border-radius: 2px;
+}
+
+.home-presentacion {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.presentacion-home {
+    width: 100%;
+    max-width: 300px;
+    border: 4px solid #3B9AE1; /* Azul eléctrico que combina con tu esquema */
+    border-radius: 12px;
+    box-shadow: 0 0 16px rgba(59, 154, 225, 0.4); /* Sombra azul suave */
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 /*  =======================
     Base Global Styles

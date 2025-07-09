@@ -1,6 +1,6 @@
-/* =======================
-   Base Global Styles
-   ======================= */
+/*  =======================
+    Base Global Styles
+    ======================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -39,13 +39,13 @@ footer {
     text-align: center;
     padding: 10px;
 }
-/* =======================
-   Base Global Styles
-   ======================= */
+/*  =======================
+    Base Global Styles
+    ======================= */
 
-/* =======================
-   Hero Section
-   ======================= */
+/*  =======================
+    Hero Section
+    ======================= */
 .hero {
     background-color: #1B263B;
     padding: 50px;
@@ -59,13 +59,13 @@ footer {
 .hero p {
     color: #A9BCD0;
 }
-/* =======================
-   Hero Section
-   ======================= */
+/*  =======================
+    Hero Section
+    ======================= */
 
-/* =======================
-   Buttons
-   ======================= */
+/*  =======================
+    Buttons
+    ======================= */
 .btn-crear, .btn-actualizar, .btn-eliminar, .btn-cancelar {
     padding: 10px 20px;
     border: 2px solid transparent;
@@ -112,13 +112,13 @@ footer {
     background-color: #565e64;
     border-color: #565e64;
 }
-/* =======================
-   Buttons
-   ======================= */
+/*  =======================
+    Buttons
+    ======================= */
 
-/* =======================
-   Tables
-   ======================= */
+/*  =======================
+    Tables
+    ======================= */
 .tabla-contactos, .tabla-instalaciones, .tabla-tecnico, .tabla-ventas, .tabla-versionproducto {
     width: 75%;
     margin: 40px auto;
@@ -183,13 +183,13 @@ footer {
     white-space: pre-line;
     overflow-wrap: break-word;
 }
-/* =======================
-   Tables
-   ======================= */
+/*  =======================
+    Tables
+    ======================= */
 
-/* =======================
-   Formulario alineado
-   ======================= */
+/*  =======================
+    Formulario alineado
+    ======================= */
 .formulario-alineado {
     max-width: 500px;
     margin: 40px auto;
@@ -227,13 +227,13 @@ footer {
     list-style: none;
     padding: 0;
 }
-/* =======================
-   Formulario alineado
-   ======================= */
+/*  =======================
+    Formulario alineado
+    ======================= */
 
-/* =======================
-   Galería de imágenes
-   ======================= */
+/*  =======================
+    Galería de imágenes
+    ======================= */
 .galeria-funciona {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -271,13 +271,13 @@ footer {
     padding: 12px 10px;
     line-height: 1.4;
 }
-/* =======================
-   Galería de imágenes
-   ======================= */
+/*  =======================
+    Galería de imágenes
+    ======================= */
 
-/* =======================
-   Responsive
-   ======================= */
+/*  =======================
+    Responsive
+    ======================= */
 @media (max-width: 768px) {
     .galeria-funciona {
         grid-template-columns: 1fr;
@@ -342,13 +342,13 @@ footer {
         font-size: 14px;
     }
 }
-/* =======================
-   Responsive
-   ======================= */
+/*  =======================
+    Responsive
+    ======================= */
 
-/* =======================
-   Agrandar las imagenes al hacer click
-   ======================= */
+/*  =======================
+    Agrandar las imagenes al hacer click
+    ======================= */
 .modal-img {
     display: none;
     position: fixed;

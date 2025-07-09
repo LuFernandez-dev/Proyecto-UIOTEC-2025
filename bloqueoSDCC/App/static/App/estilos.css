@@ -393,6 +393,61 @@ footer {
 .cerrar:hover {
     color: #bbb;
 }
-/* =======================
-   Agrandar las imagenes al hacer click
-   ======================= */
+/*  =======================
+    Agrandar las imagenes al hacer click
+    ======================= */
+
+/*  =======================
+    CARRUSEL DE RESEÑAS (ESTILO COMBINADO) 
+    ======================= */
+.reseñas {
+    background-color: transparent;
+    margin-top: 60px;
+    text-align: center;
+    padding: 20px 15px 60px 15px;
+}
+
+.carrousel-reseñas {
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #1B263B;
+    border-left: 4px solid #778DA9;
+    border-right: 4px solid #778DA9;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    position: relative;
+    padding: 20px 0; /* nuevo padding */
+}
+
+
+.carrousel-contenedor {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    position: relative; /* ya no hace falta absolute */
+    left: 0;
+    transform: none; /* quitamos translateY */
+    gap: 20px; /* espacio entre tarjetas */
+}
+
+.reseña {
+    flex: 0 0 auto;
+    padding: 15px 25px;
+    background-color: #0D1B2A;
+    border: 1px solid #415A77;
+    border-radius: 10px;
+    color: #A9BCD0;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    white-space: normal;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    min-width: 250px;
+    max-width: 300px;
+}
+/*  =======================
+    CARRUSEL DE RESEÑAS (ESTILO COMBINADO) 
+    ======================= */

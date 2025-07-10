@@ -39,3 +39,8 @@ class VentaForm(forms.ModelForm):
         widgets = {
             'fecha_compra': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
+
+#Formulario del login del superuser
+class SuperUserLoginForm(forms.Form):
+    username = forms.CharField(label='Usuario', max_length=150)
+    password = forms.CharField(label='Contraseña', widget=forms.PasswordInput)

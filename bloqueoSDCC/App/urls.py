@@ -23,4 +23,6 @@ urlpatterns = [
     path('tecnicos/nuevo/', crear_tecnico, name='tecnico_create'),
     path('tecnicos/editar/<int:pk>/', editar_tecnico, name='tecnico_update'),
     path('tecnicos/eliminar/<int:pk>/', eliminar_tecnico, name='tecnico_delete'),
+    path('login/', superuser_login_view, name='superuser_login'),
+    path('logout/', cerrar_sesion, name='cerrar_sesion'),
 ] 

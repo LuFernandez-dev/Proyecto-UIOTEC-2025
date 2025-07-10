@@ -1,0 +1,21 @@
+{% extends 'App/base.html' %}
+
+{% block title %}Login Superusuario{% endblock %}
+
+{% block content %}
+<div class="formulario-alineado">
+    <h2>Login Superusuario</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-crear">Iniciar sesión</button>
+    </form>
+    {% if messages %}
+        <ul class="errorlist">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endblock %}

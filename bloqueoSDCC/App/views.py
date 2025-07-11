@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.urls import reverse
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import user_passes_test
@@ -244,7 +243,7 @@ def superuser_login_view(request):
                 login(request, user)
                 return redirect('home')
             else:
-                messages.error(request, 'Credenciales inválidas o no sos superusuario.')
+                messages.error(request, 'Datos incorrectos.')
     else:
         form = SuperUserLoginForm()
     return render(request, 'App/login.html', {'form': form})

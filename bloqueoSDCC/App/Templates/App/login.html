@@ -1,21 +1,23 @@
 {% extends 'App/base.html' %}
 
-{% block title %}Login Superusuario{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
 <div class="formulario-alineado">
-    <h2>Login Superusuario</h2>
+    <h2 class="titulo-login">Iniciar sesión</h2>
+
+    {% if messages %}
+        <div class="mensaje-error">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn-crear">Iniciar sesión</button>
+        <button type="submit" class="btn-crear" style="margin-top: 10px;">Acceder</button>
     </form>
-    {% if messages %}
-        <ul class="errorlist">
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
 </div>
 {% endblock %}

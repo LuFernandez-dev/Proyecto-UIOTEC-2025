@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #0D1B2A;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            background-color: #1B263B;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        h2 {
+            color: #3B9AE1;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            color: #F8F9FA; /* texto más claro */
+        }
+        .dato {
+            font-weight: bold;
+            color: #F8F9FA 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Nuevo cliente interesado</h2>
+        <p><span class="dato">DNI:</span> {{ contacto.dni }}</p>
+        <p><span class="dato">Nombre:</span> {{ contacto.nombre }} {{ contacto.apellido }}</p>
+        <p><span class="dato">Email:</span> {{ contacto.email }}</p>
+        <p><span class="dato">Teléfono:</span> {{ contacto.telefono }}</p>
+        <p>Contactalo lo antes posible para ofrecerle más información sobre SDCC.</p>
+    </div>
+</body>
+</html>

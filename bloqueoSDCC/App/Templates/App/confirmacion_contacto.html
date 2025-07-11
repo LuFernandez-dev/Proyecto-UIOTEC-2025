@@ -1,9 +1,40 @@
-{% extends 'App/base.html' %}
-
-{% block content %}
-<section class="hero">
-    <h2>¡Gracias por contactarte!</h2>
-    <p>Pronto recibirás un correo confirmando tus datos y nos comunicaremos con vos.</p>
-    <a href="{% url 'home' %}" class="btn-cancelar">Volver al inicio</a>
-</section>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #0D1B2A;
+            color: #F8F9FA; /* color más claro para mayor contraste */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            background-color: #1B263B;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        h2 {
+            color: #3B9AE1;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            color: #E0E1DD; /* texto más claro */
+        }
+        .firma {
+            margin-top: 30px;
+            font-style: italic;
+            color: #B0BEC5; /* gris claro */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>¡Gracias por contactarte, {{ contacto.nombre }}!</h2>
+        <p>Hemos recibido tus datos correctamente. En breve uno de nuestros especialistas se comunicará contigo.</p>
+        <p>Estamos felices de que confíes en SDCC, el sistema que protege tu vehículo con tecnología inteligente.</p>
+        <div class="firma">Equipo SDCC</div>
+    </div>
+</body>
+</html>

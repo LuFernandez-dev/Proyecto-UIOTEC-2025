@@ -25,4 +25,6 @@ urlpatterns = [
     path('tecnicos/eliminar/<int:pk>/', eliminar_tecnico, name='tecnico_delete'),
     path('login/', superuser_login_view, name='superuser_login'),
     path('logout/', cerrar_sesion, name='cerrar_sesion'),
+    path('terminos/', terminos, name='terminos'),
+    path('privacidad/', privacidad, name='privacidad'),
 ] 

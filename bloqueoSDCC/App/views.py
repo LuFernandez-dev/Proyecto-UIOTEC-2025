@@ -5,6 +5,9 @@ from django.urls import reverse
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import user_passes_test
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.contrib.auth.models import User
 
 #Decorador
 def solo_superusuario(view_func):
@@ -14,15 +17,46 @@ def solo_superusuario(view_func):
 
 #Home
 def mostrar_home(request):
+    enviado = False
     if request.method == 'POST':
         form = ContactoForm(request.POST)
         if form.is_valid():
-            form.save()
-            return render(request, 'App/confirmacion_contacto.html')
+            contacto = form.save()
+            enviado = True
+
+            # --- Email al cliente (HTML) ---
+            asunto_cliente = '¡Gracias por contactarte con SDCC!'
+            texto_cliente = f'Hola {contacto.nombre}, gracias por tu mensaje.'
+            html_cliente = render_to_string('App/confirmacion_contacto.html', {'contacto': contacto})
+
+            email_cliente = EmailMultiAlternatives(
+                asunto_cliente,
+                texto_cliente,
+                'sdcc@tudominio.com',
+                [contacto.email],
+            )
+            email_cliente.attach_alternative(html_cliente, "text/html")
+            email_cliente.send()
+
+            # --- Email al superusuario con los datos del cliente (HTML) ---
+            superusers = User.objects.filter(is_superuser=True)
+            for admin in superusers:
+                asunto_admin = '📥 Nuevo contacto recibido'
+                texto_admin = 'Nuevo cliente interesado en SDCC'
+                html_admin = render_to_string('App/superuser_notificacion.html', {'contacto': contacto})
+
+                email_admin = EmailMultiAlternatives(
+                    asunto_admin,
+                    texto_admin,
+                    'sdcc@tudominio.com',
+                    [admin.email],
+                )
+                email_admin.attach_alternative(html_admin, "text/html")
+                email_admin.send()
     else:
         form = ContactoForm()
-    
-    return render(request, 'App/home.html', {'form': form})
+
+    return render(request, 'App/home.html', {'form': form, 'enviado': enviado})
 
 #Instalaciones
 #Lista de instalaciones
@@ -219,3 +253,11 @@ def superuser_login_view(request):
 def cerrar_sesion(request):
     logout(request)
     return redirect('home')
+
+#Términos y Condiciones
+def terminos(request):
+    return render(request, 'App/terminos.html')
+
+#Política de Privacidad
+def privacidad(request):
+    return render(request, 'App/privacidad.html')

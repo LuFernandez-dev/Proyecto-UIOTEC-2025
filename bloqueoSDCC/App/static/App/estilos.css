@@ -497,7 +497,7 @@ footer {
     ======================= */
 
 /*  =======================
-    CARRUSEL DE RESEÑAS (ESTILO COMBINADO) 
+    Carrousel de reseñas (Estilo)
     ======================= */
 .reseñas {
     background-color: transparent;
@@ -519,7 +519,6 @@ footer {
     position: relative;
     padding: 20px 0; /* nuevo padding */
 }
-
 
 .carrousel-contenedor {
     display: flex;
@@ -548,5 +547,40 @@ footer {
     max-width: 300px;
 }
 /*  =======================
-    CARRUSEL DE RESEÑAS (ESTILO COMBINADO) 
+    Carrousel de reseñas (Estilo)
+    ======================= */
+
+/*  =======================
+    Estilo de los botones del footer 
+    ======================= */
+.footer {
+    padding: 20px;
+    color: white;
+    background-color: #111;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    background: none;
+    padding: 4px 0;
+    transition: text-decoration 0.2s ease;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+/*  =======================
+    Estilo de los botones del footer 
     ======================= */

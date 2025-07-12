@@ -165,51 +165,58 @@ footer {
 /*  =======================
     Buttons
     ======================= */
-.btn-crear, .btn-actualizar, .btn-eliminar, .btn-cancelar {
+.btn-crear, .btn-actualizar, .btn-eliminar,
+.btn-filtrar, .btn-neutral {
     padding: 10px 20px;
-    border: 2px solid transparent;
-    border-radius: 4px;
+    border: none;
+    border-radius: 6px;
     font-weight: bold;
     margin: 5px;
     text-decoration: none;
     display: inline-block;
-    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: white;
 }
 
+/* Botón CREAR */
 .btn-crear {
     background-color: #28a745;
-    color: white;
 }
 .btn-crear:hover {
     background-color: #218838;
-    border-color: #218838;
 }
 
+/* Botón ACTUALIZAR */
 .btn-actualizar {
-    background-color: #ffc107;
-    color: #212529;
+    background-color: #007b8a;
 }
 .btn-actualizar:hover {
-    background-color: #b38600;
-    border-color: #b38600;
+    background-color: #005f66;
 }
 
+/* Botón ELIMINAR */
 .btn-eliminar {
     background-color: #dc3545;
-    color: white;
 }
 .btn-eliminar:hover {
     background-color: #a71d2a;
-    border-color: #a71d2a;
 }
 
-.btn-cancelar {
-    background-color: #6c757d;
-    color: white;
+/* Botón FILTRAR */
+.btn-filtrar {
+    background-color: #3B9AE1;
 }
-.btn-cancelar:hover {
-    background-color: #565e64;
-    border-color: #565e64;
+.btn-filtrar:hover {
+    background-color: #2a77b4;
+}
+
+/* Botón neutral */
+.btn-neutral {
+    background-color: #6c757d;
+}
+.btn-limpiar:hover {
+    background-color: #5a6268;
 }
 /*  =======================
     Buttons
@@ -436,7 +443,7 @@ footer {
     .btn-crear,
     .btn-actualizar,
     .btn-eliminar,
-    .btn-cancelar {
+    .btn-neutral {
         padding: 8px 12px;
         font-size: 14px;
     }
@@ -714,4 +721,45 @@ footer {
 }
 /*  =======================
     Cuadro para el soporte tecnico
+    ======================= */
+
+/*  =======================
+    Bloque de busqueda de datos
+    ======================= */
+.formulario-filtros {
+    background-color: #1B263B;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.filtros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.formulario-filtros input[type="text"] {
+    padding: 10px;
+    border: 1px solid #415A77;
+    border-radius: 6px;
+    background-color: #0D1B2A;
+    color: #E0E1DD;
+    font-size: 14px;
+}
+
+.botones-filtros {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.oculto {
+    display: none;
+}
+/*  =======================
+    Bloque de busqueda de datos
     ======================= */

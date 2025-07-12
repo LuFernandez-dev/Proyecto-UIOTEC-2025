@@ -202,7 +202,35 @@ def eliminar_venta(request, pk):
 @solo_superusuario
 def contacto_list(request):
     contactos = Contacto.objects.all()
-    return render(request, 'App/contacto_list.html', {'contactos': contactos})
+
+    dni = request.GET.get('dni')
+    nombre = request.GET.get('nombre')
+    apellido = request.GET.get('apellido')
+    email = request.GET.get('email')
+    telefono = request.GET.get('telefono')
+
+    if dni:
+        contactos = contactos.filter(dni__icontains=dni)
+    if nombre:
+        contactos = contactos.filter(nombre__icontains=nombre)
+    if apellido:
+        contactos = contactos.filter(apellido__icontains=apellido)
+    if email:
+        contactos = contactos.filter(email__icontains=email)
+    if telefono:
+        contactos = contactos.filter(telefono__icontains=telefono)
+
+    context = {
+        'contactos': contactos,
+        'filtros': {
+            'dni': dni or '',
+            'nombre': nombre or '',
+            'apellido': apellido or '',
+            'email': email or '',
+            'telefono': telefono or '',
+        }
+    }
+    return render(request, 'App/contacto_list.html', context)
 
 #Edita contacto
 @solo_superusuario

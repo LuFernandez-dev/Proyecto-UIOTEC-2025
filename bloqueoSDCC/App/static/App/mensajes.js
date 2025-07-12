@@ -2,16 +2,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const mensaje = document.getElementById('mensaje');
 
     if (mensaje) {
-        // Agregar la animación de entrada
+        // Animación de entrada
         mensaje.classList.add('mensaje-animar-entrada');
 
-        // Después de 4 segundos, iniciar la salida
+        // Salida luego de 4 segundos
         setTimeout(() => {
-            mensaje.classList.remove('mensaje-animar-entrada'); // evitar conflicto
+            mensaje.classList.remove('mensaje-animar-entrada');
             mensaje.classList.add('mensaje-animar-salida');
-
-            // Remover el mensaje después de la animación de salida
-            setTimeout(() => mensaje.remove(), 600); // esperar 0.6s
+            setTimeout(() => mensaje.remove(), 600);
         }, 4000);
+    }
+
+    // Desplazar al formulario si hay errores
+    if (mensaje && mensaje.classList.contains('mensaje-error')) {
+        const formulario = document.getElementById('formulario-contacto');
+        if (formulario) {
+            formulario.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }
 });

@@ -669,3 +669,49 @@ footer {
 /*  =======================
     Estilo y animacion del mensaje de error (form_cliente)
     ======================= */
+
+/*  =======================
+    Cuadro para el soporte tecnico
+    ======================= */
+.bloque-soporte {
+    background-color: #0D1B2A;
+    margin-top: 30px;
+    padding: 30px;
+    border-top: 2px solid #3B9AE1;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bloque-soporte h3 {
+    color: #E0E1DD;
+    margin-bottom: 10px;
+}
+
+.bloque-soporte p {
+    color: #A9BCD0;
+    margin-bottom: 20px;
+}
+
+.btn-soporte {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-soporte:hover {
+    background-color: #ffffff;
+    color: #0D1B2A;
+}
+/*  =======================
+    Cuadro para el soporte tecnico
+    ======================= */

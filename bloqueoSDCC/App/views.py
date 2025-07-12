@@ -22,6 +22,7 @@ def mostrar_home(request):
         if form.is_valid():
             contacto = form.save()
             enviado = True
+            form = ContactoForm()
 
             # --- Email al cliente (HTML) ---
             asunto_cliente = '¡Gracias por contactarte con SDCC!'
@@ -56,6 +57,34 @@ def mostrar_home(request):
         form = ContactoForm()
 
     return render(request, 'App/home.html', {'form': form, 'enviado': enviado})
+
+#Login del superuser
+def superuser_login_view(request):
+    if request.method == 'POST':
+        form = SuperUserLoginForm(request.POST)
+        if form.is_valid():
+            user = authenticate(
+                request,
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password']
+            )
+            if user is not None and user.is_superuser:
+                login(request, user)
+                return redirect('home')
+            else:
+                messages.error(request, 'Datos incorrectos.')
+    else:
+        form = SuperUserLoginForm()
+    return render(request, 'App/login.html', {'form': form})
+
+#Cerrar seccion del superuser
+def cerrar_sesion(request):
+    logout(request)
+    return redirect('home')
+
+#Soporte tecnico
+def soporte_tecnico(request):
+    return render(request, 'App/soporte_tecnico.html')
 
 #Instalaciones
 #Lista de instalaciones
@@ -228,30 +257,6 @@ def eliminar_versionproducto(request, pk):
         version.delete()
         return redirect('versionproducto_list')
     return render(request, 'App/versionproducto_confirm_delete.html', {'object': version})
-
-#Login del superuser
-def superuser_login_view(request):
-    if request.method == 'POST':
-        form = SuperUserLoginForm(request.POST)
-        if form.is_valid():
-            user = authenticate(
-                request,
-                username=form.cleaned_data['username'],
-                password=form.cleaned_data['password']
-            )
-            if user is not None and user.is_superuser:
-                login(request, user)
-                return redirect('home')
-            else:
-                messages.error(request, 'Datos incorrectos.')
-    else:
-        form = SuperUserLoginForm()
-    return render(request, 'App/login.html', {'form': form})
-
-#Cerrar seccion del superuser
-def cerrar_sesion(request):
-    logout(request)
-    return redirect('home')
 
 #Términos y Condiciones
 def terminos(request):

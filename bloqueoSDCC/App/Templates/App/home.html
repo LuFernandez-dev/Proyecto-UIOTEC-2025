@@ -80,13 +80,19 @@
     </div>
 </section>
 
-<section class="como-funciona">
+<section class="como-funciona" id="formulario-contacto">
     <h2>Dejanos tus datos</h2>
     <form method="post" class="formulario-alineado">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn-crear">Enviar</button>
     </form>
+
+    <div class="bloque-soporte">
+        <h3>¿Ya sos cliente y tenés un problema con el producto?</h3>
+        <p>Podés contactar a nuestro equipo técnico para recibir ayuda personalizada.</p>
+        <a href="{% url 'soporte_tecnico' %}" class="btn-soporte">Contactar Servicio Técnico</a>
+    </div>
 </section>
 
 <!--Bloque que solo se ejecuta en home-->

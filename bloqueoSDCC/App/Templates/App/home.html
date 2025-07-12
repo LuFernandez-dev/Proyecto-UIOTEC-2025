@@ -3,6 +3,17 @@
 {% load static %}
 
 {% block content %}
+
+{% if enviado %}
+<div id="mensaje" class="mensaje-exito">
+    Datos enviados correctamente.
+</div>
+{% elif form.errors %}
+<div id="mensaje" class="mensaje-error">
+    Por favor revisá los campos. Algunos datos no son válidos.
+</div>
+{% endif %}
+
 <section class="hero">
     <h2>Protegé tu vehículo con tecnología inteligente</h2>
     <p>Conocé S.D.C.C, el innovador sistema de cierre centralizado que refuerza la seguridad desde el parante B.</p>

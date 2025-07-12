@@ -585,6 +585,9 @@ footer {
     Estilo de los botones del footer 
     ======================= */
 
+/*  =======================
+    Estilo del login 
+    ======================= */
 .titulo-login {
     color: #E0E1DD;
     font-size: 28px;
@@ -592,9 +595,77 @@ footer {
     text-align: center;
 }
 
-.mensaje-error {
+.error-login {
     color: #dc3545;
     font-weight: bold;
     margin-bottom: 15px;
     text-align: center;
 }
+/*  =======================
+    Estilo del login 
+    ======================= */
+
+/*  =======================
+    Estilo y animacion del mensaje de error (form_cliente)
+    ======================= */
+#mensaje {
+    position: fixed;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+
+    max-width: 90%;
+    width: auto;
+    opacity: 0; /* Oculto al inicio */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.mensaje-exito {
+    background-color: #28a745;
+    color: white;
+}
+
+.mensaje-error {
+    background-color: #dc3545;
+    color: white;
+}
+
+.mensaje-animar-entrada {
+    animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -50px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes subirDesaparecer {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50px);
+    }
+}
+
+.mensaje-animar-salida {
+    animation: subirDesaparecer 0.6s forwards;
+}
+/*  =======================
+    Estilo y animacion del mensaje de error (form_cliente)
+    ======================= */

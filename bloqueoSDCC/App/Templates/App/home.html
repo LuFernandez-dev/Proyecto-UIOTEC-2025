@@ -89,4 +89,11 @@
     </form>
 </section>
 
+<!--Bloque que solo se ejecuta en home-->
+{% block extra_js %}
+        <script src="{% static 'App/lightbox.js' %}"></script>
+        <script src="{% static 'App/carrousel.js' %}"></script>
+        <script src="{% static 'App/mensajes.js' %}"></script>
+{% endblock %}
+
 {% endblock %}

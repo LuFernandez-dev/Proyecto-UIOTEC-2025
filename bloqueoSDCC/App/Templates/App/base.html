@@ -42,8 +42,10 @@
         <p>&copy; 2025 Seguridad Automotriz</p>
     </footer>
 
-    <script src="{% static 'App/lightbox.js' %}"></script>
-    <script src="{% static 'App/carrousel.js' %}"></script>
-    <script src="{% static 'App/mensajes.js' %}"></script>
+<!--Bloque javascript personalizado-->
+{% block extra_js %}{% endblock %}
+
+<!--Bloque javascript global-->
+
 </body>
 </html>

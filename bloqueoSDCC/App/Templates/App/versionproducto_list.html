@@ -1,11 +1,26 @@
 {% extends 'App/base.html' %}
 
+{% load static %}
+
 {% block content %}
 <h2>Listado de Versiones del Producto</h2>
 
 <div class="acciones-superiores">
     <a href="{% url 'versionproducto_create' %}" class="btn-crear">Crear</a>
+    <button id="btnToggleFiltros" class="btn-filtrar" style="margin-bottom: 10px;">Mostrar / Ocultar Buscador</button>
 </div>
+
+<form method="get" class="formulario-filtros oculto">
+    <div class="filtros-grid">
+        <input type="text" name="nombre" placeholder="Nombre" value="{{ filtros.nombre }}">
+        <input type="text" name="descripcion" placeholder="Descripción" value="{{ filtros.descripcion }}">
+        <input type="date" name="fecha" placeholder="Fecha de lanzamiento" value="{{ filtros.fecha }}">
+    </div>
+    <div class="botones-filtros">
+        <button type="submit" class="btn-filtrar">Buscar</button>
+        <a href="{% url 'versionproducto_list' %}" class="btn-cancelar">Limpiar</a>
+    </div>
+</form>
 
 <table class="tabla-versionproducto">
     <thead>
@@ -34,4 +49,8 @@
         {% endfor %}
     </tbody>
 </table>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'App/filtros.js' %}"></script>
 {% endblock %}

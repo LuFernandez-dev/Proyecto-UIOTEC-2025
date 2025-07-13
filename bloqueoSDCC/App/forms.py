@@ -15,6 +15,10 @@ class VersionProductoForm(forms.ModelForm):
         widgets = {
             'fecha_lanzamiento': forms.DateInput(attrs={'type': 'date'})
         }
+        labels = {
+            'nombre': 'Nombre de version',
+            'fecha_lanzamiento': 'Fecha de lanzamiento',
+        }
 
 #Formulario para Instalacion
 class InstalacionForm(forms.ModelForm):
@@ -23,6 +27,10 @@ class InstalacionForm(forms.ModelForm):
         fields = ['cliente', 'vehiculo', 'direccion', 'fecha_instalacion', 'estado', 'notas']
         widgets = {
             'fecha_instalacion': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
+        labels = {
+            'fecha_instalacion': 'Fecha de instalación',
+            'notas': 'Observaciones adicionales',
         }
 
 #Formulario para Tecnico
@@ -38,6 +46,10 @@ class VentaForm(forms.ModelForm):
         fields = ['cliente', 'forma_pago', 'importe', 'fecha_compra']
         widgets = {
             'fecha_compra': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
+        labels = {
+            'forma_pago': 'Forma de pago',
+            'fecha_compra': 'Fecha de compra'
         }
 
 #Formulario del login del superuser

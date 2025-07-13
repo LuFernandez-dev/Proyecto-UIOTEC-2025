@@ -62,7 +62,7 @@
 </section>
 
 <section class="reseñas">
-    <h2>Lo que dicen nuestros clientes</h2>
+    <h2><strong>Lo que dicen nuestros clientes</strong></h2>
     <div class="carrousel-reseñas">
         <div class="carrousel-contenedor" id="carrousel-contenedor">
             <div class="reseña">“Excelente atención y tecnología de primer nivel.” <strong>– Juan Pérez</strong></div>
@@ -81,7 +81,8 @@
 </section>
 
 <section class="como-funciona" id="formulario-contacto">
-    <h2>Dejanos tus datos</h2>
+    <h2>¿Querés mejorar la seguridad de tu vehículo?</h2>
+    <h2 class="sin-linea" style="color: white;">Dejanos tus datos y te contactaremos</h2>
     <form method="post" class="formulario-alineado">
         {% csrf_token %}
         {{ form.as_p }}

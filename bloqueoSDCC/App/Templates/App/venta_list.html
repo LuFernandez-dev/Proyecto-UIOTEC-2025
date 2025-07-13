@@ -3,27 +3,55 @@
 {% load static %}
 
 {% block content %}
-<section class="seccion">
-    <h2>Lista de Ventas</h2>
+<h2>Lista de Ventas</h2>
 
 <div class="acciones-superiores">
     <a href="{% url 'venta_create' %}" class="btn-crear">Crear</a>
+    <button id="btnToggleFiltros" class="btn-filtrar" style="margin-bottom: 10px;">Mostrar / Ocultar Buscador</button>
 </div>
+
+<form method="get" class="formulario-filtros oculto">
+    <div class="filtros-grid">
+        <select name="cliente">
+            <option value="">-- Cliente --</option>
+            {% for c in clientes %}
+                <option value="{{ c.id }}" {% if filtros.cliente == c.id|stringformat:"s" %}selected{% endif %}>
+                    {{ c.dni }} - {{ c.nombre }} - {{ c.apellido }} - {{c.email}} - {{c.telefono}}
+                </option>
+            {% endfor %}
+        </select>
+
+        <select name="forma_pago">
+            <option value="">-- Forma de pago --</option>
+            <option value="Debito" {% if filtros.forma_pago == "Debito" %}selected{% endif %}>Débito</option>
+            <option value="Credito" {% if filtros.forma_pago == "Credito" %}selected{% endif %}>Crédito</option>
+            <option value="Tranferencia" {% if filtros.forma_pago == "Tranferencia" %}selected{% endif %}>Transferencia</option>
+        </select>
+
+        <input type="date" name="fecha" value="{{ filtros.fecha }}">
+        <input type="text" name="importe" placeholder="Importe" value="{{ filtros.importe }}">
+    </div>
+
+    <div class="botones-filtros">
+        <button type="submit" class="btn-filtrar">Buscar</button>
+        <a href="{% url 'venta_list' %}" class="btn-cancelar">Limpiar</a>
+    </div>
+</form>
     
-    <table class="tabla-ventas">
-        <thead>
-            <tr>
-                <th>DNI Cliente</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Forma de Pago</th>
-                <th>Importe</th>
-                <th>Fecha de Compra</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for venta in ventas %}
+<table class="tabla-ventas">
+    <thead>
+        <tr>
+            <th>DNI Cliente</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Forma de Pago</th>
+            <th>Importe</th>
+            <th>Fecha de Compra</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for venta in ventas %}
             <tr>
                 <td>{{ venta.cliente.dni }}</td>
                 <td>{{ venta.cliente.nombre }}</td>
@@ -33,8 +61,8 @@
                 <td>{{ venta.fecha_compra }}</td>
                 <td>
                     <div class="acciones-tabla">
-                <a href="{% url 'venta_update' venta.id %}" class="btn-actualizar">Editar</a>
-                <a href="{% url 'venta_delete' venta.id %}" class="btn-eliminar">Eliminar</a> 
+                        <a href="{% url 'venta_update' venta.id %}" class="btn-actualizar">Editar</a>
+                        <a href="{% url 'venta_delete' venta.id %}" class="btn-eliminar">Eliminar</a> 
                     </div>
                 </td>
             </tr>
@@ -43,7 +71,10 @@
                 <td colspan="7" style="padding-left: 10px; text-align: left;">No hay ventas registradas.</td>
             </tr>
             {% endfor %}
-        </tbody>
-    </table>
-</section>
-{% endblock %}k
+    </tbody>
+</table>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'App/filtros.js' %}"></script>
+{% endblock %}

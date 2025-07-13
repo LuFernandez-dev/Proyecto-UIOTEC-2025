@@ -90,8 +90,40 @@ def soporte_tecnico(request):
 #Lista de instalaciones
 @solo_superusuario
 def instalacion_list(request):
-    instalaciones = Instalacion.objects.all()
-    return render(request, 'App/instalacion_list.html', {'instalaciones': instalaciones})
+    instalaciones = Instalacion.objects.select_related('cliente').all()
+
+    cliente_id = request.GET.get('cliente', '')
+    vehiculo = request.GET.get('vehiculo', '')
+    direccion = request.GET.get('direccion', '')
+    fecha = request.GET.get('fecha', '')
+    estado = request.GET.get('estado', '')
+
+    if cliente_id:
+        instalaciones = instalaciones.filter(cliente__id=cliente_id)
+    if vehiculo:
+        instalaciones = instalaciones.filter(vehiculo__icontains=vehiculo)
+    if direccion:
+        instalaciones = instalaciones.filter(direccion__icontains=direccion)
+    if fecha:
+        instalaciones = instalaciones.filter(fecha_instalacion__date=fecha)
+    if estado:
+        instalaciones = instalaciones.filter(estado=estado)
+
+    filtros = {
+        'cliente': cliente_id,
+        'vehiculo': vehiculo,
+        'direccion': direccion,
+        'fecha': fecha,
+        'estado': estado
+    }
+
+    clientes = Contacto.objects.all()
+
+    return render(request, 'App/instalacion_list.html', {
+        'instalaciones': instalaciones,
+        'filtros': filtros,
+        'clientes': clientes
+    })
 
 #Crear instalación
 @solo_superusuario
@@ -131,8 +163,33 @@ def eliminar_instalacion(request, pk):
 #Lista de tecnicos
 @solo_superusuario
 def tecnico_list(request):
+    legajo = request.GET.get('legajo', '')
+    nombre = request.GET.get('nombre', '')
+    apellido = request.GET.get('apellido', '')
+    telefono = request.GET.get('telefono', '')
+
     tecnicos = Tecnico.objects.all()
-    return render(request, 'App/tecnico_list.html', {'tecnicos': tecnicos})
+
+    if legajo:
+        tecnicos = tecnicos.filter(legajo__icontains=legajo)
+    if nombre:
+        tecnicos = tecnicos.filter(nombre__icontains=nombre)
+    if apellido:
+        tecnicos = tecnicos.filter(apellido__icontains=apellido)
+    if telefono:
+        tecnicos = tecnicos.filter(telefono__icontains=telefono)
+
+    filtros = {
+        'legajo': legajo,
+        'nombre': nombre,
+        'apellido': apellido,
+        'telefono': telefono,
+    }
+
+    return render(request, 'App/tecnico_list.html', {
+        'tecnicos': tecnicos,
+        'filtros': filtros
+    })
 
 #Registra tecnico
 @solo_superusuario
@@ -166,8 +223,36 @@ def eliminar_tecnico(request, pk):
 #Lista de venta
 @solo_superusuario
 def venta_list(request):
-    ventas = Venta.objects.all()
-    return render(request, 'App/venta_list.html', {'ventas': ventas})
+    cliente_id = request.GET.get('cliente', '')
+    forma_pago = request.GET.get('forma_pago', '')
+    fecha_compra = request.GET.get('fecha', '')
+    importe = request.GET.get('importe', '')
+
+    ventas = Venta.objects.select_related('cliente').all()
+
+    if cliente_id:
+        ventas = ventas.filter(cliente__id=cliente_id)
+    if forma_pago:
+        ventas = ventas.filter(forma_pago=forma_pago)
+    if fecha_compra:
+        ventas = ventas.filter(fecha_compra__date=fecha_compra)
+    if importe:
+        ventas = ventas.filter(importe__icontains=importe)
+
+    filtros = {
+        'cliente': cliente_id,
+        'forma_pago': forma_pago,
+        'fecha': fecha_compra,
+        'importe': importe,
+    }
+
+    clientes = Contacto.objects.all()
+
+    return render(request, 'App/venta_list.html', {
+        'ventas': ventas,
+        'filtros': filtros,
+        'clientes': clientes,
+    })
 
 #Registra venta
 @solo_superusuario
@@ -256,7 +341,28 @@ def eliminar_contacto(request, pk):
 @solo_superusuario
 def versionproducto_list(request):
     versiones = VersionProducto.objects.all()
-    return render(request, 'App/versionproducto_list.html', {'versiones': versiones})
+
+    nombre = request.GET.get('nombre', '')
+    descripcion = request.GET.get('descripcion', '')
+    fecha = request.GET.get('fecha', '')
+
+    if nombre:
+        versiones = versiones.filter(nombre__icontains=nombre)
+    if descripcion:
+        versiones = versiones.filter(descripcion__icontains=descripcion)
+    if fecha:
+        versiones = versiones.filter(fecha_lanzamiento=fecha)
+
+    filtros = {
+        'nombre': nombre,
+        'descripcion': descripcion,
+        'fecha': fecha
+    }
+
+    return render(request, 'App/versionproducto_list.html', {
+        'versiones': versiones,
+        'filtros': filtros
+    })
 
 #Registrar version del producto
 @solo_superusuario

@@ -7,6 +7,6 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn-crear">Guardar</button>
-    <a href="{% url 'instalacion_list' %}" class="btn-neutral">Volver al listado</a>
+    <a href="{% url 'instalacion_list' %}" class="btn-cancelar">Volver al listado</a>
 </form>
 {% endblock %}

@@ -1,11 +1,27 @@
 {% extends 'App/base.html' %}
 
+{% load static %}
+
 {% block content %}
 <h2>Listado de Técnicos</h2>
 
 <div class="acciones-superiores">
     <a href="{% url 'tecnico_create' %}" class="btn-crear">Crear</a>
+    <button id="btnToggleFiltros" class="btn-filtrar" style="margin-bottom: 10px;">Mostrar / Ocultar Buscador</button>
 </div>
+
+<form method="get" class="formulario-filtros oculto">
+    <div class="filtros-grid">
+        <input type="text" name="legajo" placeholder="Legajo" value="{{ filtros.legajo }}">
+        <input type="text" name="nombre" placeholder="Nombre" value="{{ filtros.nombre }}">
+        <input type="text" name="apellido" placeholder="Apellido" value="{{ filtros.apellido }}">
+        <input type="text" name="telefono" placeholder="Teléfono" value="{{ filtros.telefono }}">
+    </div>
+    <div class="botones-filtros">
+        <button type="submit" class="btn-filtrar">Buscar</button>
+        <a href="{% url 'tecnico_list' %}" class="btn-cancelar">Limpiar</a>
+    </div>
+</form>
 
 <table class="tabla-tecnico">
     <thead>
@@ -36,4 +52,8 @@
         {% endfor %}
     </tbody>
 </table>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'App/filtros.js' %}"></script>
 {% endblock %}

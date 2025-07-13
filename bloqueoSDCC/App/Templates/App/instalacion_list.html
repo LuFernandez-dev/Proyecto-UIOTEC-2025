@@ -1,11 +1,39 @@
 {% extends 'App/base.html' %}
 
+{% load static %}
+
 {% block content %}
 <h2>Listado de Instalaciones</h2>
 
 <div class="acciones-superiores">
     <a href="{% url 'instalacion_create' %}" class="btn-crear">Crear</a>
+    <button id="btnToggleFiltros" class="btn-filtrar" style="margin-bottom: 10px;">Mostrar / Ocultar Buscador</button>
 </div>
+
+<form method="get" class="formulario-filtros oculto">
+    <div class="filtros-grid">
+        <select name="cliente">
+            <option value="">-- Cliente --</option>
+            {% for c in clientes %}
+                <option value="{{ c.id }}" {% if filtros.cliente == c.id|stringformat:"s" %}selected{% endif %}>
+                    {{ c.dni }} - {{ c.nombre }} - {{ c.apellido }} - {{c.email}} - {{c.telefono}}
+                </option>
+            {% endfor %}
+        </select>
+        <input type="text" name="vehiculo" placeholder="Vehículo" value="{{ filtros.vehiculo }}">
+        <input type="text" name="direccion" placeholder="Dirección" value="{{ filtros.direccion }}">
+        <input type="date" name="fecha" placeholder="Fecha instalación" value="{{ filtros.fecha }}">
+        <select name="estado">
+            <option value="">-- Estado --</option>
+            <option value="Pendiente" {% if filtros.estado == "Pendiente" %}selected{% endif %}>Pendiente</option>
+            <option value="Completado" {% if filtros.estado == "Completado" %}selected{% endif %}>Completado</option>
+        </select>
+    </div>
+    <div class="botones-filtros">
+        <button type="submit" class="btn-filtrar">Buscar</button>
+        <a href="{% url 'instalacion_list' %}" class="btn-cancelar">Limpiar</a>
+    </div>
+</form>
 
 <table class="tabla-instalaciones">
     <thead>
@@ -32,8 +60,8 @@
             <td>{{ instalacion.notas }}</td>
             <td>
                 <div class="acciones-tabla">
-                <a href="{% url 'instalacion_update' instalacion.id %}" class="btn-actualizar">Editar</a>
-                <a href="{% url 'instalacion_delete' instalacion.id %}" class="btn-eliminar">Eliminar</a> 
+                    <a href="{% url 'instalacion_update' instalacion.id %}" class="btn-actualizar">Editar</a>
+                    <a href="{% url 'instalacion_delete' instalacion.id %}" class="btn-eliminar">Eliminar</a> 
                 </div>
             </td>
         </tr>
@@ -44,4 +72,8 @@
         {% endfor %}
     </tbody>
 </table>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'App/filtros.js' %}"></script>
 {% endblock %}

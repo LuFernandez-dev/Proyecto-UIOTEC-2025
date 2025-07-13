@@ -138,6 +138,10 @@ footer {
     display: block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.sin-linea::after {
+    display: none !important;
+}
 /*  =======================
     Base Global Styles
     ======================= */
@@ -166,7 +170,7 @@ footer {
     Buttons
     ======================= */
 .btn-crear, .btn-actualizar, .btn-eliminar,
-.btn-filtrar, .btn-neutral {
+.btn-filtrar, .btn-cancelar {
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
@@ -211,11 +215,11 @@ footer {
     background-color: #2a77b4;
 }
 
-/* Botón neutral */
-.btn-neutral {
+/* Botón CANCELAR */
+.btn-cancelar {
     background-color: #6c757d;
 }
-.btn-limpiar:hover {
+.btn-cancelar:hover {
     background-color: #5a6268;
 }
 /*  =======================
@@ -443,7 +447,7 @@ footer {
     .btn-crear,
     .btn-actualizar,
     .btn-eliminar,
-    .btn-neutral {
+    .btn-cancelar {
         padding: 8px 12px;
         font-size: 14px;
     }
@@ -741,7 +745,9 @@ footer {
     gap: 15px;
 }
 
-.formulario-filtros input[type="text"] {
+.formulario-filtros input[type="date"],
+.formulario-filtros input[type="text"],
+.formulario-filtros select {
     padding: 10px;
     border: 1px solid #415A77;
     border-radius: 6px;

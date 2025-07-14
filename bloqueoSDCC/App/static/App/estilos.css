@@ -28,7 +28,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 7px 30px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
@@ -828,4 +828,105 @@ footer {
 }
 /*  =======================
     Bloque de busqueda de datos
+    ======================= */
+
+/*  =======================
+    Beneficios
+    ======================= */
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.cartel-descuento {
+    background: linear-gradient(90deg, #ff9800 60%, #fff3e0 100%);
+    color: #222;
+    padding: 1.2em 2em;
+    border-radius: 1em;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 2em;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    display: none; /* Oculto por defecto, se mostrará por JS */
+}
+/*  =======================
+    Beneficios
+    ======================= */
+
+/*  =======================
+    Animación de imagenes de home
+    ======================= */
+/* Animación de entrada para imágenes por scroll */
+.animacion-img,
+.animacion-scroll {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+.animacion-img.visible,
+.animacion-scroll.visible {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+/* Animación por scroll */
+.animacion-scroll {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+.animacion-scroll.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+/* Animación cartel de descuento */
+.animacion-descuento {
+    animation: parpadeoDescuento 1.2s infinite alternate;
+}
+@keyframes parpadeoDescuento {
+    0% { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    60% { box-shadow: 0 2px 24px rgba(255,152,0,0.25); }
+    100% { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+}
+.icono-oferta {
+    animation: iconoOfertaAnim 1.2s infinite alternate;
+}
+@keyframes iconoOfertaAnim {
+    0% { filter: drop-shadow(0 0 0 #d32f2f); }
+    60% { filter: drop-shadow(0 0 8px #d32f2f); }
+    100% { filter: drop-shadow(0 0 0 #d32f2f); }
+}
+/*  =======================
+    Animación de imagenes de home
+    ======================= */
+
+/*  =======================
+    SECCION INFO-PROYECTO
+    ======================= */
+.info-proyecto {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 32px auto 0 auto;
+    line-height: 1.3;
+    color: #E0E1DD;
+    background-color: #1B263B;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+.info-proyecto > * {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+.info-proyecto h1, .info-proyecto h2 {
+    color: #A9BCD0;
+    margin-bottom: 8px !important;
+}
+.info-proyecto p {
+    margin-bottom: 8px !important;
+}
+/*  =======================
+    SECCION INFO-PROYECTO
     ======================= */

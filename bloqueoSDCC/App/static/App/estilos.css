@@ -453,10 +453,7 @@ footer {
     }
 }
 
-<<<<<<< HEAD
-=======
 /* Ocultar botón hamburguesa en pantallas grandes */
->>>>>>> db4134a3ca0e06d34efbcabfe082e0cc74252a39
 .hamburger {
     display: none;
     font-size: 28px;
@@ -497,15 +494,13 @@ footer {
         margin-bottom: 10px;
     }
 }
-<<<<<<< HEAD
-=======
 
 /* Scrollbar horizontal personalizado para todas las tablas */
 .tabla-contactos::-webkit-scrollbar,
 .tabla-instalaciones::-webkit-scrollbar,
 .tabla-tecnico::-webkit-scrollbar,
 .tabla-ventas::-webkit-scrollbar,
-.tabla-versionproducto::-webkit-scrollbar, {
+.tabla-versionproducto::-webkit-scrollbar {
     height: 6px;
 }
 
@@ -517,7 +512,6 @@ footer {
     background-color: #3B9AE1;
     border-radius: 10px;
 }
->>>>>>> db4134a3ca0e06d34efbcabfe082e0cc74252a39
 /*  =======================
     Responsive
     ======================= */

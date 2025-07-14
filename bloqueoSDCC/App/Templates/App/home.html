@@ -14,10 +14,18 @@
 </div>
 {% endif %}
 
+<div class="cartel-descuento">
+    ¡Promoción especial! <span style="color:#d32f2f;">20% de descuento</span> en la compra de tu sistema S.D.C.C. <br>
+    <span style="font-size:0.95em; font-weight:normal;">Válido hasta el 30 de agosto. ¡Aprovechá esta oportunidad para proteger tu vehículo!</span>
+</div>
+
 <section class="hero">
     <h2>Protegé tu vehículo con tecnología inteligente</h2>
     <p>Conocé S.D.C.C, el innovador sistema de cierre centralizado que refuerza la seguridad desde el parante B.</p>
     <img src="{% static 'App/Imagen5.jpeg' %}" class="presentacion-home">
+    <p style="text-align:center; margin-top: 20px;">
+        <a href="#formulario-contacto" class="btn-soporte">Quiero que me contacten</a>
+    </p>
 </section>
 <section class="como-funciona">
 <h2>¿Cómo funciona?</h2>
@@ -30,25 +38,28 @@
     Funciona con batería recargable, es adaptable a distintos modelos
     y no altera el diseño del vehículo.
     </p>
+    <div class="boton-mas-info">
+    <a href="{% url 'mas_informacion' %}" class="btn-soporte">Más información</a>
+    </div>
     <p class="frase-impacto">
     <strong>Tecnología hecha para tu tranquilidad.</strong>
     </p>
 </div>
 <div class="galeria-funciona">
 <figure>
-    <img src="{% static 'App/Imagen1.jpg' %}" class="img-click" data-img="{% static 'App/Imagen1.jpg' %}">
+    <img src="{% static 'App/Imagen1.jpg' %}" class="img-click animacion-img animacion-scroll" data-img="{% static 'App/Imagen1.jpg' %}">
     <figcaption>Conexión de Arduino con módulo Bluetooth</figcaption>
 </figure>
 <figure>
-    <img src="{% static 'App/Imagen2.jpg' %}" class="img-click" data-img="{% static 'App/Imagen2.jpg' %}">
+    <img src="{% static 'App/Imagen2.jpg' %}" class="img-click animacion-img animacion-scroll" data-img="{% static 'App/Imagen2.jpg' %}">
     <figcaption>Esquema de instalación dentro del vehículo</figcaption>
 </figure>
 <figure>
-    <img src="{% static 'App/Imagen3.jpg' %}" class="img-click" data-img="{% static 'App/Imagen3.jpg' %}">
+    <img src="{% static 'App/Imagen3.jpg' %}" class="img-click animacion-img animacion-scroll" data-img="{% static 'App/Imagen3.jpg' %}">
     <figcaption>Montaje real de Bluetooth y Arduino</figcaption>
 </figure>
 <figure>
-    <img src="{% static 'App/Imagen4.jpg' %}" class="img-click" data-img="{% static 'App/Imagen4.jpg' %}">
+    <img src="{% static 'App/Imagen4.jpg' %}" class="img-click animacion-img animacion-scroll" data-img="{% static 'App/Imagen4.jpg' %}">
     <figcaption>Actuador mecánico en el parante B</figcaption>
 </figure>
 </div>
@@ -61,21 +72,31 @@
 
 </section>
 
+<section class="funciona-texto">
+    <h2><strong>¿Por qué elegirnos?</strong></h2>
+    <ul class="lista-beneficios">
+        <li>✅Instalación rápida y profesional</li>
+        <li>✅Tecnología 100% nacional</li>
+        <li>✅Sin modificar el diseño del auto</li>
+        <li>✅Soporte técnico postventa incluido</li>
+    </ul>
+</section>
+
 <section class="reseñas">
     <h2><strong>Lo que dicen nuestros clientes</strong></h2>
     <div class="carrousel-reseñas">
         <div class="carrousel-contenedor" id="carrousel-contenedor">
-            <div class="reseña">“Excelente atención y tecnología de primer nivel.” <strong>– Juan Pérez</strong></div>
-            <div class="reseña">“Fácil de usar y muy seguro. Lo recomiendo.” <strong>– Ana Gómez</strong></div>
-            <div class="reseña">“Una gran solución para proteger mi auto.” <strong>– Pedro López</strong></div>
-            <div class="reseña">“Muy profesionales y confiables.” <strong>– Carla Ruiz</strong></div>
-            <div class="reseña">“Instalación rápida y efectiva. Me dio tranquilidad para dejar el auto en la calle.” <strong>– Laura Benítez</strong></div>
-            <div class="reseña">“El diseño del sistema es genial. Se nota que está hecho con dedicación.” <strong>– Marcos Rivas</strong></div>
-            <div class="reseña">“Tuve una duda técnica y me respondieron al instante. Excelente servicio.” <strong>– Florencia Salinas</strong></div>
-            <div class="reseña">“Desde que tengo este sistema, me siento mucho más seguro.” <strong>– Ricardo Duarte</strong></div>
-            <div class="reseña">“Muy recomendable. Lo instalé en mi camioneta y va perfecto.” <strong>– Belén Torres</strong></div>
-            <div class="reseña">“Ideal para quienes buscan seguridad sin complicarse.” <strong>– Ezequiel Ramírez</strong></div>
-            <div class="reseña">“Tecnología simple pero poderosa. Justo lo que necesitaba.” <strong>– Camila Gutiérrez</strong></div>
+            <div class="reseña">“Excelente atención y tecnología de primer nivel.” <strong>–Juan Pérez</strong></div>
+            <div class="reseña">“Fácil de usar y muy seguro. Lo recomiendo.” <strong>–Ana Gómez</strong></div>
+            <div class="reseña">“Una gran solución para proteger mi auto.” <strong>–Pedro López</strong></div>
+            <div class="reseña">“Muy profesionales y confiables.” <strong>–Carla Ruiz</strong></div>
+            <div class="reseña">“Instalación rápida y efectiva. Me dio tranquilidad para dejar el auto en la calle.” <strong>–Laura Benítez</strong></div>
+            <div class="reseña">“El diseño del sistema es genial. Se nota que está hecho con dedicación.” <strong>–Marcos Rivas</strong></div>
+            <div class="reseña">“Tuve una duda técnica y me respondieron al instante. Excelente servicio.” <strong>–Florencia Salinas</strong></div>
+            <div class="reseña">“Desde que tengo este sistema, me siento mucho más seguro.” <strong>–Ricardo Duarte</strong></div>
+            <div class="reseña">“Muy recomendable. Lo instalé en mi camioneta y va perfecto.” <strong>–Belén Torres</strong></div>
+            <div class="reseña">“Ideal para quienes buscan seguridad sin complicarse.” <strong>–Ezequiel Ramírez</strong></div>
+            <div class="reseña">“Tecnología simple pero poderosa. Justo lo que necesitaba.” <strong>–Camila Gutiérrez</strong></div>
         </div>
     </div>
 </section>
@@ -98,9 +119,11 @@
 
 <!--Bloque que solo se ejecuta en home-->
 {% block extra_js %}
-        <script src="{% static 'App/lightbox.js' %}"></script>
-        <script src="{% static 'App/carrousel.js' %}"></script>
-        <script src="{% static 'App/mensajes.js' %}"></script>
+    <script src="{% static 'App/lightbox.js' %}"></script>
+    <script src="{% static 'App/carrousel.js' %}"></script>
+    <script src="{% static 'App/mensajes.js' %}"></script>
+    <script src="{% static 'App/scroll_animaciones.js' %}"></script>
+    <script src="{% static 'App/promocion.js' %}"></script>
 {% endblock %}
 
 {% endblock %}

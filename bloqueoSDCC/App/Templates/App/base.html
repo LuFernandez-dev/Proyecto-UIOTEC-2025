@@ -19,17 +19,17 @@
         {% if user.is_authenticated and user.is_superuser %}
             <button class="hamburger" id="hamburger-btn">&#9776;</button>
         {% endif %}
-    <nav>
-        {% if user.is_authenticated and user.is_superuser %}
-            <a href="{% url 'contacto_list' %}">Contactos</a>
-            <a href="{% url 'versionproducto_list' %}">Versiones</a>
-            <a href="{% url 'instalacion_list' %}">Instalaciones</a>
-            <a href="{% url 'tecnico_list' %}">Técnicos</a>
-            <a href="{% url 'venta_list' %}">Ventas</a>
-            <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
-        {% endif %}
-    </nav>
-</header>
+        <nav>
+            {% if user.is_authenticated and user.is_superuser %}
+                <a href="{% url 'contacto_list' %}">Contactos</a>
+                <a href="{% url 'versionproducto_list' %}">Versiones</a>
+                <a href="{% url 'instalacion_list' %}">Instalaciones</a>
+                <a href="{% url 'tecnico_list' %}">Técnicos</a>
+                <a href="{% url 'venta_list' %}">Ventas</a>
+                <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
+            {% endif %}
+        </nav>
+    </header>
 
     <main>
         {% block content %}{% endblock %}
@@ -46,9 +46,10 @@
         <p>&copy; 2025 Seguridad Automotriz</p>
     </footer>
 
-<!--Bloque javascript personalizado-->
-{% block extra_js %}{% endblock %}
+    <!--Bloque javascript personalizado-->
+    {% block extra_js %}{% endblock %}
 
-<script src="{% static 'App/hamburger.js' %}"></script>
+    <!--Bloque javascript global-->
+    <script src="{% static 'App/hamburger.js' %}"></script>
 </body>
 </html>

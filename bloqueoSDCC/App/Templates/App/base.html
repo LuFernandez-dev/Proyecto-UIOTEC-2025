@@ -3,6 +3,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock title %}</title> 
     <link rel="stylesheet" href="{% static 'App/estilos.css' %}">
     <link rel = "icon" href = "{% static 'App/favicon.ico' %}">
@@ -15,7 +16,8 @@
             </a>
             <span class="bienvenida-texto">Bienvenido a SDCC</span>
         </div>
-    <nav>
+        <button class="hamburger" id="hamburger-btn">&#9776;</button>
+        <nav>
         {% if user.is_authenticated and user.is_superuser %}
             <a href="{% url 'contacto_list' %}">Contactos</a>
             <a href="{% url 'versionproducto_list' %}">Versiones</a>
@@ -24,8 +26,8 @@
             <a href="{% url 'venta_list' %}">Ventas</a>
             <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
         {% endif %}
-    </nav>
-</header>
+        </nav>
+    </header>
 
     <main>
         {% block content %}{% endblock %}
@@ -45,7 +47,7 @@
 <!--Bloque javascript personalizado-->
 {% block extra_js %}{% endblock %}
 
-<!--Bloque javascript global-->
+<script src="{% static 'App/hamburger.js' %}"></script>
 
 </body>
 </html>

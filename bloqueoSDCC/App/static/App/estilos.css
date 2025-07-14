@@ -452,6 +452,66 @@ footer {
         font-size: 14px;
     }
 }
+
+/* Ocultar botón hamburguesa en pantallas grandes */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav.mostrar-menu {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+}
+
+/* Scrollbar horizontal personalizado para todas las tablas */
+.tabla-contactos::-webkit-scrollbar,
+.tabla-instalaciones::-webkit-scrollbar,
+.tabla-tecnico::-webkit-scrollbar,
+.tabla-ventas::-webkit-scrollbar,
+.tabla-versionproducto::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tabla-contactos::-webkit-scrollbar-thumb,
+.tabla-instalaciones::-webkit-scrollbar-thumb,
+.tabla-tecnico::-webkit-scrollbar-thumb,
+.tabla-ventas::-webkit-scrollbar-thumb,
+.tabla-versionproducto::-webkit-scrollbar-thumb {
+    background-color: #3B9AE1;
+    border-radius: 10px;
+}
 /*  =======================
     Responsive
     ======================= */

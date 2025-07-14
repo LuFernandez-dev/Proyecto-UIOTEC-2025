@@ -1,0 +1,52 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="info-proyecto">
+    <h2><strong>Tecnología aplicada al servicio de la seguridad</strong></h2>
+    <p>
+        El corazón del sistema es una <strong>placa Arduino</strong>, que actúa como centro de control electrónico. Esta placa 
+        interpreta las señales enviadas por un dispositivo Bluetooth (celular o control remoto) y activa un <strong>servomotor</strong> 
+        de precisión. En menos de un segundo, el mecanismo ejecuta un movimiento angular que traba o destraba una barra de 
+        seguridad ubicada en la parte superior del parante B, agregando una segunda traba a la puerta.
+    </p>
+    <p>
+        Este bloqueo adicional es mecánicamente sólido, pero visualmente discreto: el sistema <strong>no altera el diseño exterior ni interior</strong> 
+        del vehículo. Puede instalarse en vehículos particulares, utilitarios o de uso comercial, sin comprometer estética ni funcionalidad.
+    </p>
+    <h2><strong>Componentes del sistema</strong></h2>
+        <li><strong>Placa Arduino:</strong> microcontrolador programado para gestionar el sistema.</li>
+        <li><strong>Módulo Bluetooth:</strong> permite la activación remota desde dispositivos móviles.</li>
+        <li><strong>Servomotor SG90:</strong> responsable del movimiento físico de bloqueo.</li>
+        <li><strong>Brazo actuador y varilla:</strong> transmiten la fuerza del servomotor al mecanismo de cierre.</li>
+        <li><strong>Eje, rodamiento y barra de seguridad:</strong> aseguran el anclaje firme de la puerta.</li>
+    <h2><strong>Autonomía energética</strong></h2>
+    <p>
+        El S.D.C.C. funciona con una <strong>batería recargable secundaria</strong>, lo que garantiza independencia de la batería 
+        principal del vehículo. Esta autonomía permite que el sistema siga operativo incluso si el auto se queda sin carga o desconectado.
+    </p>
+    <h2><strong>Compromiso con la sostenibilidad</strong></h2>
+    <p>
+        En sus futuras versiones, el sistema incorporará tecnología de <strong>impresión 3D</strong> para la fabricación de piezas estructurales, 
+        permitiendo reducir costos, minimizar residuos y trabajar con materiales reciclables. Esto lo convierte en una solución 
+        <strong>sostenible, moderna y responsable</strong>.
+    </p>
+    <h2><strong>Ventajas clave del sistema S.D.C.C.</strong></h2>
+        <li>Mayor seguridad: bloqueo extra que refuerza el cierre tradicional.</li>
+        <li>Control remoto vía Bluetooth: sin necesidad de tocar la puerta ni usar llaves físicas.</li>
+        <li>Adaptabilidad: compatible con distintos modelos y carrocerías.</li>
+        <li>Discreción y estética: diseño compacto, sin modificaciones visibles.</li>
+        <li>Autonomía: batería recargable propia e independiente.</li>
+    <h2><strong>Un paso más hacia un vehículo más seguro</strong></h2>
+    <p>
+        El sistema S.D.C.C. no solo busca prevenir robos, sino también ofrecer al usuario una experiencia moderna y confiable, 
+        alineada con los avances tecnológicos y las exigencias de seguridad actuales.
+    </p>
+</section>
+    <div style="text-align: center;">
+<a href="{% url 'home' %}" class="btn-cancelar">Volver al home</a>
+    </div>
+
+{% endblock %}

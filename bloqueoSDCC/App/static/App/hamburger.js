@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     const btnHamburguesa = document.getElementById('hamburger-btn');
-    const nav = document.querySelector('header nav');
+    const menuNav = document.querySelector('nav');
 
-    if (btnHamburguesa && nav) {
+    if (btnHamburguesa && menuNav) {
         btnHamburguesa.addEventListener('click', function () {
-            nav.classList.toggle('mostrar-menu');
+            menuNav.classList.toggle('mostrar-menu');
         });
     }
 });

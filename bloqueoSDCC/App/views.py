@@ -399,3 +399,7 @@ def terminos(request):
 #Política de Privacidad
 def privacidad(request):
     return render(request, 'App/privacidad.html')
+
+#Mas Informacion
+def mas_informacion(request):
+    return render(request, 'App/mas_informacion.html')

@@ -28,4 +28,5 @@ urlpatterns = [
     path('terminos/', terminos, name='terminos'),
     path('privacidad/', privacidad, name='privacidad'),
     path('soporte/', soporte_tecnico, name='soporte_tecnico'),
+    path('mas-informacion/', mas_informacion, name='mas_informacion'),
 ] 

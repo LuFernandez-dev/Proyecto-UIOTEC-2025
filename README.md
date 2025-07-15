@@ -62,7 +62,7 @@ La app cuenta con dos partes diferenciadas según el tipo de usuario:
 - entorno/: Entorno virtual de Python.
 
 ## Créditos
-Desarrollado por Martin Avalos, Lucas Fernandez, Marina Astrada, Celeste Mancini, Gabriela  .
+Desarrollado por Martin Avalos, Lucas Fernandez, Marina Astrada, Celeste Mancini, Gabriela Moya Vega.
 
----
+
 ¡Contribuciones y sugerencias son bienvenidas!

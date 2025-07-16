@@ -14,24 +14,41 @@ El sistema S.D.C.C. refuerza el cierre de las puertas desde el interior del auto
 
 ## Instalación y uso
 1. Clona este repositorio.
-2. Activa el entorno virtual:
+
+2. Crea el entorno virtual
    powershell
-   cd bloqueoSDCC
-   ..\entorno\Scripts\activate
+   python -m venv entorno
    
-3. Instala las dependencias:
+3. Activa el entorno virtual:
+   powershell
+   .\entorno\Scripts\activate
+   
+4. Instala las dependencias:
    powershell
    pip install django
+
+5. Ubicarte en el proyecto
+   powershell
+   cd .\entorno\
    
-4. Realiza las migraciones:
+6. Realiza las migraciones:
    powershell
    python manage.py migrate
+
+7.Crear el superuser
+  powershell
+  python .\manage.py createsuperuser
+
+8. Realiza las migraciones (Otra vez):
+   powershell
+   python .\manage.py makemigrations
+   python manage.py migrate
    
-5. Ejecuta el servidor de desarrollo:
+9. Ejecuta el servidor de desarrollo:
    powershell
    python manage.py runserver
    
-6. Accede a la app en [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+10. Accede a la app en [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ## Vistas de la aplicación
 

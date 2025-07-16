@@ -30,7 +30,7 @@ El sistema S.D.C.C. refuerza el cierre de las puertas desde el interior del auto
 6. Realiza las migraciones:
    python manage.py migrate
 
-7.Crear el superuser:
+ 7.Crear el superuser:
   python .\manage.py createsuperuser
 
 8. Realiza las migraciones (Otra vez):

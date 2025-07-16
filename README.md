@@ -1,4 +1,4 @@
-# S.D.C.C. - Sistema de Doble Cierre Centralizado
+# S.D.C.C. - Sistema de Cierre Centralizado
 
 Proyecto desarrollado en Django para la gestión de clientes, instalaciones y ventas del sistema S.D.C.C., un innovador sistema de seguridad para vehículos que refuerza el cierre de puertas desde el parante B, activado vía Bluetooth o control remoto.
 

@@ -381,6 +381,22 @@ footer {
     padding: 12px 10px;
     line-height: 1.4;
 }
+
+.galeria-funciona .video-wrapper {
+    width: 100%;
+    height: 240px;            
+    overflow: hidden;
+    position: relative;
+    border: none;
+}
+
+.galeria-funciona .video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   
+    background-color: #000; 
+}
+
 /*  =======================
     Galería de imágenes
     ======================= */
